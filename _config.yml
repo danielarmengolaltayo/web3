@@ -1,0 +1,3 @@
+exclude: ["README.md", "Gemfile", "Gemfile.lock"]
+# baseurl: /hello
+url: danielarmengolaltayo.github.io

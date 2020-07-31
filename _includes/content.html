@@ -1,0 +1,35 @@
+{%- for capsule in site.html_pages -%}
+
+{%- assign capsulePath = capsule.path | remove: '_capsules/' | remove: '.md' -%}
+
+{%- if capsulePath == include.left -%}
+
+<div id="body">
+    {{ capsule.content | markdownify }}
+</div>
+
+{%- endif -%}
+
+{%- if capsulePath == include.right -%}
+
+{%- if capsule.intro -%}<div class="intro">{{ capsule.intro }}</div>{%- endif -%}
+
+{%- if capsule.image-h -%}
+<div class="media"><img src="assets/images/{{capsule.image-h}}" class="image-h"></div>
+{%- endif -%}
+{%- if capsule.image-v -%}
+<div class="media"><img src="assets/images/{{capsule.image-v}}" class="image-v"></div>
+{%- endif -%}
+{%- if capsule.video -%}
+<div class="media">{{capsule.video}}</div>
+{%- endif -%}
+
+{%- if capsule.head -%}<div class="head">{{ capsule.head }}</div>{%- endif -%}
+
+<div id="body">
+    {{ capsule.content | markdownify }}
+</div>
+
+{%- endif -%}
+
+{%- endfor -%}

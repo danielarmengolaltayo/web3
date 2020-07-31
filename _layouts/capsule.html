@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+{%- include header.html daniel=page.left -%}
+
+<div class="container">
+    <div id="left">
+        <div class="content">
+            {%- include content.html left=page.left -%}
+        </div>
+    </div>
+    <div id="right">
+        <div class="content">
+            {%- include content.html right=page.right -%}
+        </div>
+    </div>
+</div>
